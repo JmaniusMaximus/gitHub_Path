@@ -1,0 +1,291 @@
+/* Page loading animations */
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+/* All Text on Webpage */
+body {
+    margin: 0;
+    font-family: "Akaya Kanadaka", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #FFF9C4;
+}
+
+/* Setting a grid with 12 columns which we can set to the 
+header and main aspects of the page*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3%;
+}
+
+/* All the header section */
+header {
+    background-color: #FFB6C1;
+    padding: 2% 4%;
+    align-items: center;
+    position: relative;
+    height: 5vh; /* Fixed height for the header */
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+/* Children of Header Parent */
+header h1 {
+    grid-column: span 6;
+    animation: fade-down 1.5s;
+    color:#4B0082
+}
+header nav {
+    grid-column: 7 / span 6;
+    justify-self: wrap;
+    text-wrap: wrap;
+    overflow-wrap: anywhere;
+    align-items: canter;
+    animation: fade-down 1.5s;
+}
+header nav a {
+    text-decoration: none;
+    color: #4B0082;
+    font-weight: bold;;
+    width: 100%;
+    padding: 1%;
+    margin-left: 1%;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+    color: #FFF9C4; /* Link color */
+}
+
+
+
+/* The main section  */
+main {
+    padding: 20px;
+    margin: 60px auto;
+    max-width: 1200px;
+    animation: fade-up 1.5s;
+}
+
+
+/* Page sections */
+main section {
+    height: 100vh; /* Full viewport heght */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main #about {
+    grid-column: span 12;
+    text-align: center;
+    background-color: #FFDAB9;
+    color: #FF4500;
+    border-radius: 30px;
+    text-wrap: wrap;
+    height: auto; /* Auto height to fit content */
+    padding: 20px; 
+}
+main #about a { /* Depop Link*/
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: cadetblue;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+main #about a:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+main #about a:active {
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+/* Skills section */
+main #skills {
+    grid-column: span 12;
+    text-align: center;
+    background-color: #B2EBA1;
+    color: #2E7D32;
+    border-radius: 30px;
+    height: auto; /* Auto height to fit content */
+    padding: 20px;
+}
+main #skills div {
+    display: flex;
+}
+
+
+/* Projects section */
+main #projects {
+    grid-column: span 12;
+    text-align: center;
+    background-color: #D8BFD8;
+    color: #4B0082;
+    border-radius: 30px;
+    height: auto; /* Auto height to fit content */
+    padding: 20px;
+}
+
+main #projects .project-links {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of project links */
+    justify-content: center;
+    gap: 20px; /* Add some space between the project links */
+}
+
+main #projects a {
+    text-decoration: none;
+    padding: 10px 20px; /* Add some padding to the project links */
+    background-color: cadetblue; /* Background color for the project links */
+    color: #fff; /* Text color for the project links */ 
+    border-radius: 5px; /* Rounded corners for the project links */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+main #projects a:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+main #projects a:active {
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+/* Contact section */
+main #contact {
+    grid-column: span 12;
+    text-align: center;
+    background-color: #B3E5FC;
+    color: #0D47A1;
+    border-radius: 30px;
+    height: auto; /* Auto height to fit content */
+    padding: 20px;
+}
+main #contact form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+}
+main #contact form input.fullName {
+    grid-column: 2 / span 1;
+    font-family: "Akaya Kanadaka", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+main #contact form input.email {
+    grid-column: 2 / span 1;
+    font-family: "Akaya Kanadaka", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+main #contact form textarea.text {
+    grid-column: 2 / span 1;
+    height: 100px;
+    min-width: 100px;
+    font-family: "Akaya Kanadaka", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+main #contact form input.button {
+    grid-column: 2 / span 1;
+    background-color: cadetblue;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Akaya Kanadaka", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main #contact form input.button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+main #contact form input.button:active {
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+
+/* Resume section */
+main #resume {
+    grid-column: span 12;
+    text-align: center;
+    background-color: #D3D3D3;
+    color: #696969;
+    border-radius: 30px;
+    height: auto; /* Auto height to fit content */
+    padding: 20px;
+    margin-bottom: 10vh; /* Add margin to the bottom of the resume section */
+}
+main #resume div{ 
+    grid-template-columns: repeat(3, 1fr);
+}
+main #resume div h2{
+    grid-column: span 3;
+}
+main #resume div a{
+    grid-column: span 3;
+    text-decoration: none;
+    background-color: cadetblue;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+main #resume div a:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+main #resume div a:active {
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+
+/* Layouts for smaller screen sizes */
+@media (max-width: 1200px) {
+    main img {
+        grid-column: 2 / span 10;
+    }
+    main #home {
+        grid-column: 2 / span 10;
+    }
+}
+
+@media (max-width: 550px) {
+    header h1 {
+        grid-column:span 12;
+    } 
+}
+
+
